@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Week4 Data Products Presentation</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Week4 Data Products Presentation">
+  <meta name="author" content="Venkata">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Week4 Data Products Presentation</h1>
+    <h2>HTML Slides for R-Markdown</h2>
+    <p>Venkata<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Slide 1</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Data products Final Assignment is about creating a shiny app that has some widgets and 
+dynamic updates to the content on user data updates (Use of reactive function()).
+I created a shiny app to display the Wages for different ages.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Motion chart</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Summary of the dataset.</p>
+
+<pre><code>##       year           age               sex                    maritl    
+##  Min.   :2003   Min.   :18.00   1. Male  :3000   1. Never Married: 648  
+##  1st Qu.:2004   1st Qu.:33.75   2. Female:   0   2. Married      :2074  
+##  Median :2006   Median :42.00                    3. Widowed      :  19  
+##  Mean   :2006   Mean   :42.41                    4. Divorced     : 204  
+##  3rd Qu.:2008   3rd Qu.:51.00                    5. Separated    :  55  
+##  Max.   :2009   Max.   :80.00                                           
+##                                                                         
+##        race                   education                     region    
+##  1. White:2480   1. &lt; HS Grad      :268   2. Middle Atlantic   :3000  
+##  2. Black: 293   2. HS Grad        :971   1. New England       :   0  
+##  3. Asian: 190   3. Some College   :650   3. East North Central:   0  
+##  4. Other:  37   4. College Grad   :685   4. West North Central:   0  
+##                  5. Advanced Degree:426   5. South Atlantic    :   0  
+##                                           6. East South Central:   0  
+##                                           (Other)              :   0  
+##            jobclass               health      health_ins      logwage     
+##  1. Industrial :1544   1. &lt;=Good     : 858   1. Yes:2083   Min.   :3.000  
+##  2. Information:1456   2. &gt;=Very Good:2142   2. No : 917   1st Qu.:4.447  
+##                                                            Median :4.653  
+##                                                            Mean   :4.654  
+##                                                            3rd Qu.:4.857  
+##                                                            Max.   :5.763  
+##                                                                           
+##       wage       
+##  Min.   : 20.09  
+##  1st Qu.: 85.38  
+##  Median :104.92  
+##  Mean   :111.70  
+##  3rd Qu.:128.68  
+##  Max.   :318.34  
+## 
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <article data-timings="">
+    <p>##Plot between Wages and Ages.</p>
+
+<pre><code class="r">plot( Wage$age, Wage$wage, ylab = &quot;Wages&quot;, xlab = &quot;Age&quot;, data = Wage)
+</code></pre>
+
+<pre><code>## Warning in plot.window(...): &quot;data&quot; is not a graphical parameter
+</code></pre>
+
+<pre><code>## Warning in plot.xy(xy, type, ...): &quot;data&quot; is not a graphical parameter
+</code></pre>
+
+<pre><code>## Warning in axis(side = side, at = at, labels = labels, ...): &quot;data&quot; is not
+## a graphical parameter
+
+## Warning in axis(side = side, at = at, labels = labels, ...): &quot;data&quot; is not
+## a graphical parameter
+</code></pre>
+
+<pre><code>## Warning in box(...): &quot;data&quot; is not a graphical parameter
+</code></pre>
+
+<pre><code>## Warning in title(...): &quot;data&quot; is not a graphical parameter
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Conclusion:</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Shiny app is created to display the relationship between Wages and Ages. I used lineat regression model for this purpose.
+On selecting the age, the respective Wage is plotted on the graph.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Slide 1'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Motion chart'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='NA'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusion:'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

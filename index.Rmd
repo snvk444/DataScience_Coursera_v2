@@ -1,0 +1,52 @@
+---
+title       : Week4 Data Products Presentation
+subtitle    : HTML Slides for R-Markdown
+author      : Venkata
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Slide 1
+
+Data products Final Assignment is about creating a shiny app that has some widgets and 
+dynamic updates to the content on user data updates (Use of reactive function()).
+I created a shiny app to display the Wages for different ages.
+
+---
+
+## Motion chart
+
+Summary of the dataset.
+
+```{r echo = F}
+library(ISLR)
+data(Wage)
+summary(Wage)
+
+```
+
+---
+
+##Plot between Wages and Ages.
+
+```{r, result = 'asis', message=FALSE}
+plot( Wage$age, Wage$wage, ylab = "Wages", xlab = "Age", data = Wage)
+```
+
+---
+
+## Conclusion:
+
+Shiny app is created to display the relationship between Wages and Ages. I used lineat regression model for this purpose.
+On selecting the age, the respective Wage is plotted on the graph.
+
+
+
+
+
+
